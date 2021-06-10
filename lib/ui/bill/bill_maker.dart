@@ -38,8 +38,11 @@ class _BillMakerState extends State<BillMaker> {
     _invoiceNoController = TextEditingController(text: widget.isEditing ? widget.bill.invoiceNo.toString() : "");
     _searchController = TextEditingController();
     _scrollController = ScrollController();
-    if (widget.isEditing) _invoiceDate = DateTime.parse(widget.bill.invoiceDate);
-    if (widget.isEditing) parts = widget.bill.parts;
+    if (widget.isEditing) {
+      _invoiceDate = DateTime.parse(widget.bill.invoiceDate);
+      parts = widget.bill.parts;
+      taxValue = widget.bill.taxType;
+    }
     if (widget.parts != null) widget.parts.forEach((e) => parts.add(PartWithQuantity(part: e, quantity: 1)));
   }
 
