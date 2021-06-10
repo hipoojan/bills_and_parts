@@ -1,0 +1,32 @@
+name: bills_and_parts
+description: Bills & Parts
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.3
+  toast: ^0.1.5
+  flutter_riverpod: ^0.14.0+3
+  sizer: ^2.0.13
+  bitsdojo_window: ^0.1.1+1
+  path_provider: ^2.0.2
+  google_fonts: ^2.1.0
+  font_awesome_flutter: ^9.1.0
+  printing: ^5.2.1
+  syncfusion_flutter_pdf: ^19.1.67-beta
+  number_to_words: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
