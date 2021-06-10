@@ -212,7 +212,8 @@ class Parts extends ConsumerWidget {
         backgroundColor: Colors.transparent,
         barrierColor: Colors.black38,
         enableDrag: true,
-        builder: (context) => NewPart(partsProvider: partsProvider, isEditing: isEditing, part: part));
+        builder: (context) => DraggableScrollableSheet(
+            initialChildSize: 0.4, maxChildSize: 0.6, minChildSize: 0.4, builder: (context, scrollController) => NewPart(partsProvider: partsProvider, isEditing: isEditing, part: part)));
   }
 
   showBillMakerSheet(BuildContext context, BillsChangeNotifier billProvider, bool isEditing, Bill bill, List<Part> parts) {
@@ -223,9 +224,6 @@ class Parts extends ConsumerWidget {
         backgroundColor: Colors.transparent,
         barrierColor: Colors.black38,
         builder: (context) => DraggableScrollableSheet(
-            initialChildSize: 0.95,
-            maxChildSize: 1,
-            minChildSize: 0.6,
-            builder: (context, controller) => BillMaker(billsProvider: billProvider, isEditing: isEditing, bill: bill, parts: parts)));
+            initialChildSize: 0.95, maxChildSize: 1, minChildSize: 0.6, builder: (context, controller) => BillMaker(billsProvider: billProvider, isEditing: isEditing, bill: bill, parts: parts)));
   }
 }

@@ -40,10 +40,11 @@ class _NewPartState extends State<NewPart> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 300,
       margin: EdgeInsets.symmetric(horizontal: 40.0.w),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
-      child: Wrap(
+      child: Column(
         children: [
           Row(
             children: [
