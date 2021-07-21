@@ -3,7 +3,7 @@ import 'package:bills_and_parts/utils/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:sizer/sizer.dart';
+import 'package:sizer/sizer.dart';
 import 'package:toast/toast.dart';
 
 class NewPart extends StatefulWidget {
@@ -41,7 +41,7 @@ class _NewPartState extends State<NewPart> {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      margin: EdgeInsets.symmetric(horizontal: 250),
+      margin: EdgeInsets.symmetric(horizontal: 40.0.w),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
       child: Column(
@@ -119,7 +119,8 @@ class _NewPartState extends State<NewPart> {
                   onPressed: () {
                     if (_idController.text.isNotEmpty && _nameController.text.isNotEmpty && _priceController.text.isNotEmpty && _taxController.text.isNotEmpty) {
                       if (widget.isEditing) {
-                        widget.partsProvider.editPart(widget.part.id, Part(id: widget.part.id, name: _nameController.text, price: int.parse(_priceController.text), tax: int.parse(_taxController.text)));
+                        widget.partsProvider
+                            .editPart(widget.part.id, Part(id: widget.part.id, name: _nameController.text, price: int.parse(_priceController.text), tax: int.parse(_taxController.text)));
                         Toast.show("Part Successfully Edited!", context, backgroundColor: Colors.green, backgroundRadius: 10, duration: Toast.LENGTH_LONG);
                         Navigator.pop(context);
                         Navigator.pop(context);

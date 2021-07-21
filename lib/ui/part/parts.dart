@@ -10,7 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toast/toast.dart';
-// import 'package:sizer/sizer.dart';
+import 'package:sizer/sizer.dart';
 
 class Parts extends ConsumerWidget {
   @override
@@ -172,7 +172,7 @@ class Parts extends ConsumerWidget {
         enableDrag: true,
         builder: (context) {
           return Container(
-              margin: EdgeInsets.symmetric(horizontal: 200),
+              margin: EdgeInsets.symmetric(horizontal: 50.0.w),
               decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
               child: Wrap(children: [
                 TextButton(

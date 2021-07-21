@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.3
   toast: ^0.1.5
   flutter_riverpod: ^0.14.0+3
-#  sizer: ^2.0.13
+  sizer: ^2.0.13
   bitsdojo_window: ^0.1.1+1
   path_provider: ^2.0.2
   google_fonts: ^2.1.0
@@ -21,7 +21,6 @@ dependencies:
   printing: ^5.2.1
   syncfusion_flutter_pdf: ^19.1.67-beta
   number_to_words: ^1.0.0
-  win32: ^2.2.5
 
 dev_dependencies:
   flutter_test:
@@ -33,11 +32,12 @@ flutter:
   assets:
     - assets/logo.png
 
+#flutter pub run msix:create
 msix_config:
   display_name: BillsAndParts
   publisher_display_name: hipoojan
   identity_name: com.hi.bills_and_parts
-  msix_version: 1.0.0.0
+  msix_version: 1.0.3.3
   certificate_path: D:\Projects\Flutter\bills_and_parts\bandp.pfx
   certificate_password: bandp@123
   publisher: CN=HI, O=HI, L=India, S=Gujarat, C=IN
