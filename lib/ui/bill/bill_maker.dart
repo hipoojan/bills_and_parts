@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
+// import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
 import 'package:toast/toast.dart';
 
@@ -69,7 +69,7 @@ class _BillMakerState extends State<BillMaker> {
           child: SingleChildScrollView(
             controller: _scrollController,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0.w),
+              margin: EdgeInsets.symmetric(horizontal: 220),
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
               child: Column(
@@ -251,9 +251,7 @@ class _BillMakerState extends State<BillMaker> {
                               DataCell(Text('${parts[index].part.price * parts[index].quantity}', textAlign: TextAlign.center)),
                             ])),
                   ),
-                  parts.isEmpty
-                      ? Padding(padding: EdgeInsets.symmetric(vertical: 30), child: Text('No Items Added!', style: GoogleFonts.inter(color: Colors.black, fontSize: 18)))
-                      : Container(height: 30),
+                  parts.isEmpty ? Padding(padding: EdgeInsets.symmetric(vertical: 30), child: Text('No Items Added!', style: GoogleFonts.inter(color: Colors.black, fontSize: 18))) : Container(height: 30),
                   Consumer(builder: (context, watch, child) {
                     final partsProvider = watch(partsNotifier);
                     if (partsProvider.parts.isEmpty) partsProvider.getParts();
@@ -313,8 +311,7 @@ class _BillMakerState extends State<BillMaker> {
                                   } else
                                     Toast.show("No Search Query Found!", context, backgroundRadius: 10, backgroundColor: Colors.red, duration: Toast.LENGTH_LONG);
                                 },
-                                style:
-                                    ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 20, horizontal: 40)), backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+                                style: ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 20, horizontal: 40)), backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
                                 child: Text('Add Part', style: GoogleFonts.inter(color: Colors.white, fontSize: 18))),
                           )
                         ],
@@ -332,7 +329,7 @@ class _BillMakerState extends State<BillMaker> {
               height: 80,
               width: double.maxFinite,
               decoration: BoxDecoration(color: Colors.white, boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 10)]),
-              margin: EdgeInsets.symmetric(horizontal: 20.0.w),
+              margin: EdgeInsets.symmetric(horizontal: (20 / 100) * MediaQuery.of(context).size.width),
               padding: EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
